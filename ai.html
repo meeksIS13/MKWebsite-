@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joke Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        #joke {
+            font-size: 18px;
+            margin: 20px 0;
+            min-height: 60px;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>😂 Joke Generator</h1>
+    <p id="joke">Click the button to get a joke!</p>
+    <button onclick="generateJoke()">Get Joke</button>
+</div>
+
+<script>
+    const jokes = [
+        "Why don’t skeletons fight each other? They don’t have the guts.",
+        "I told my computer I needed a break, and it said no problem—it froze.",
+        "Why did the math book look sad? Because it had too many problems.",
+        "What do you call fake spaghetti? An impasta!",
+        "Why don’t programmers like nature? Too many bugs.",
+        "Why did the scarecrow win an award? Because he was outstanding in his field!",
+        "I just got fired from the keyboard factory… they said I wasn’t putting in enough shifts.",
+        "Why did the bicycle fall over? Because it was two-tired!"
+    ];
+
+    function generateJoke() {
+        const randomIndex = Math.floor(Math.random() * jokes.length);
+        document.getElementById("joke").textContent = jokes[randomIndex];
+    }
+</script>
+
+</body>
+</html>
